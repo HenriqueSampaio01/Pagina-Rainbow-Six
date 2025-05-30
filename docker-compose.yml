@@ -1,28 +1,28 @@
 version: '3.8'
 
 services:
-  php:
-    image: php:8.1-apache
-    container_name: php
-    ports:
-      - "8080:80"
+  web:
+    image: php:8.2-apache
+    container_name: php_app
     volumes:
       - ./src:/var/www/html
+    ports:
+      - "8080:80"
     depends_on:
-      - mysql
+      - db
 
-  mysql:
-    image: mysql:5.7
-    container_name: mysql
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cadastro
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpass
+      MYSQL_ROOT_PASSWORD: root
     volumes:
-      - mysql_data:/var/lib/mysql
-      - ./banco.sql:/docker-entrypoint-initdb.d/banco.sql:ro
+      - db_data:/var/lib/mysql
+      - ./banco.sql:/docker-entrypoint-initdb.d/banco.sql
+    ports:
+      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -31,8 +31,8 @@ services:
     ports:
       - "8081:80"
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: db
       MYSQL_ROOT_PASSWORD: root
 
 volumes:
-  mysql_data:
+  db_data:
