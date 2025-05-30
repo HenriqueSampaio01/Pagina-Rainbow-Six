@@ -118,12 +118,10 @@ h2 {
     color: red;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid red;
 }
 
 .sucesso-msg {
     color: green;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid green;
 }
