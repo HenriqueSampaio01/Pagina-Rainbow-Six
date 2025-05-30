@@ -1,7 +1,7 @@
 <?php
-$host = "db";
-$usuario = "root";
-$senha = "root";
+$host = "mysql";
+$usuario = "user";
+$senha = "userpass";
 $banco = "cadastro";
 
 try {
