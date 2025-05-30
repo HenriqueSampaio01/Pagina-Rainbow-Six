@@ -1,8 +1,8 @@
 <?php
 session_start();
-$host = "localhost";
+$host = "db";
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "cadastro";
 
 try {
