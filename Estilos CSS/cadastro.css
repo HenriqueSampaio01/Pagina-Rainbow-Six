@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+  margin-bottom: 60px;
+}
+
+header {
+  background-color: #000000;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #e49b0f;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #b8b2b2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+h2 {
+  color: #e49b0f;
+}
+
+.form-cadastro {
+  max-width: 400px;
+  margin: 10px auto;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form-cadastro h2 {
+  text-align: center;
+  text-indent: 10px;
+}
+
+.form-cadastro form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-cadastro label {
+  font-size: large;
+  color: #e49b0f;
+}
+
+.form-cadastro input[type="text"],
+.form-cadastro input[type="email"],
+.form-cadastro input[type="password"],
+.form-cadastro input[type="tel"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-cadastro input[type="submit"] {
+  background-color: #e49b0f;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.form-cadastro input[type="submit"]:hover {
+  background-color: #c4811e;
+}
+
+.genero {
+  text-align: center;
+}
+
+.erro {
+  border: 1px solid red !important;
+}
+
+.mensagem {
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.erro-msg {
+    color: red;
+    background: #ffe6e6;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid red;
+}
+
+.sucesso-msg {
+    color: green;
+    background: #e6ffe6;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid green;
+}

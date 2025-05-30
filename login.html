@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - R6 Wiki</title>
+  <link rel="stylesheet" href="Estilos CSS/login.css">
+  <script src="validarlogin.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Faça seu Login</h1>
+    <nav>
+      <ul>
+        <li><a href="pagina_principal.html">Início</a></li>
+        <li><a href="operadores.html">Operadores</a></li>
+        <li><a href="mapas.html">Mapas</a></li>
+        <li><a href="dicas.html">Dicas</a></li>
+        <li><a href="login.html">Faça seu Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>Entrar</h2>
+      <form action="login.php" method="post" onsubmit="return validarlogin()">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário">
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+
+        <input type="submit" value="Entrar">
+      </form>
+      <div class="link-cadastro">
+        <p>Não tem conta? <a href="cadastro.html">Registre-se</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rainbow Six Siege Wiki.</p>
+  </footer>
+</body>
+</html>
