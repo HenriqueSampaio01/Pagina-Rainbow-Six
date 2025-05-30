@@ -58,5 +58,4 @@ function validarformulario() {
     }
     mensagemUsuario.innerHTML = 'Formulário enviado com sucesso!';
     mensagemUsuario.classList.add('sucesso-msg');
-    return true;
 }

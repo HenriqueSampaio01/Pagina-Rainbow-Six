@@ -1,3 +1,5 @@
+USE cadastro;
+
 CREATE TABLE IF NOT EXISTS cadastro (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,

@@ -116,7 +116,6 @@ h2 {
 
 .erro-msg {
     color: red;
-    background: #ffe6e6;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid red;
@@ -124,7 +123,6 @@ h2 {
 
 .sucesso-msg {
     color: green;
-    background: #e6ffe6;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid green;
