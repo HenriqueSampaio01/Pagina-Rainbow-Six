@@ -1,36 +1,42 @@
 <?php
-session_start();
 $host = "db";
 $usuario = "root";
 $senha = "root";
 $banco = "cadastro";
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $usuario, $senha);
+    $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $nome, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $usuario = $_POST['usuario'] ?? '';
-    $senha = $_POST['senha'] ?? '';
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+       $nome = $_POST['nome'] ?? '';
+       $senha = $_POST['senha'] ?? '';
 
-    if (empty($usuario) || empty($senha)) {
-        echo "Preencha todos os campos.";
+    if (empty($nome) || empty($senha)) {
+        header("Location: login.html?erro=campos_vazios");
         exit;
-    }
+        }
 
     $sql = "SELECT * FROM cadastro WHERE nome = :nome";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':nome' => $usuario]);
+    $stmt->execute([':nome' => $nome]);
 
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $nome = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($usuario && password_verify($senha, $usuario['senha'])) {
-        $_SESSION['usuario'] = $usuario['nome'];
-        header("Location: area-restrita.html");
-        exit;
+    if ($nome && password_verify($senha, $nome['senha'])) {
+            $_SESSION['nome'] = $nome['nome'];
+            header("Location: area-restrita.html");
+            exit;
+        } else {
+            header("Location: login.html?erro=invalido");
+            exit;
+        }
     } else {
-        echo "Usuário ou senha inválidos.";
+        header("Location: login.html");
+        exit;
     }
 } catch (PDOException $e) {
-    echo "Erro ao conectar: " . $e->getMessage();
+    header("Location: login.html?erro=erro_banco");
+    exit;
 }
 ?>
