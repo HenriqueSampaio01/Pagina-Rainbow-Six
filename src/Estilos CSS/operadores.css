@@ -62,10 +62,10 @@ footer {
   padding: 20px;
   margin-right: 10px;
   margin-bottom: 20px;
-  border-bottom: 4px solid #0f96e4;
   margin-top: 10px;
   background-color: #333;
   border-radius: 25px;
+  background-image: linear-gradient(rgb(61, 1, 1), black);
 }
 
 .defensores {
@@ -73,10 +73,10 @@ footer {
   padding: 20px;
   margin-left: 10px;
   margin-top: 10px;
-  border-bottom: 4px solid #0f96e4;
   margin-bottom: 20px;
   background-color: #333;
   border-radius: 25px;
+  background-image: linear-gradient(rgb(1, 1, 51), black);
 }
 
 .atacantes h2 {
