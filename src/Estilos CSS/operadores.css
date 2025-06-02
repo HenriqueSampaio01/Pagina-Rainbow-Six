@@ -84,6 +84,7 @@ footer {
   border-bottom: 2px solid #b8b2b2;
   padding-bottom: 10px;
   color: #e49b0f;
+  filter: drop-shadow(5px 5px 5px #000000);
 }
 
 .defensores h2 {
@@ -91,6 +92,7 @@ footer {
   border-bottom: 2px solid #b8b2b2;
   padding-bottom: 10px;
   color: #e49b0f;
+  filter: drop-shadow(5px 5px 5px #000000);
 }
 
 .operador {

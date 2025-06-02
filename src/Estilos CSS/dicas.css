@@ -55,6 +55,7 @@ footer {
   border-left: 4px solid #0f96e4;
   margin-bottom: 20px;
   border-radius: 5px;
+  filter: drop-shadow(5px 5px 5px #000000);
 }
 
 .dica h3 {
