@@ -1,6 +1,6 @@
 <?php
 $host = "db";
-$usuario = "root";
+$nome = "root";
 $senha = "root";
 $banco = "cadastro";
 

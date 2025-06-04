@@ -1,11 +1,11 @@
 <?php
 $host = "db";
-$usuario = "root";
+$nome = "root";
 $senha = "root";
 $banco = "cadastro";
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $usuario, $senha);
+    $pdo = new PDO("mysql:host=$host;dbname=$banco;charset=utf8mb4", $nome, $senha);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec("SET NAMES 'utf8mb4'");
 
@@ -42,9 +42,10 @@ try {
         ':genero' => $genero,
     ]);
 
-    header("Location: cadastro.html?sucesso=1");
+    header("Location: login.html?sucesso=1");
     exit;
 } catch (PDOException $e) {
     header("Location: cadastro.html?erro=erro_banco");
     exit;
 }
+?>
