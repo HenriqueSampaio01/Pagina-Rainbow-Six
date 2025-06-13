@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #1c1c1c;
+  background: linear-gradient(to right, #2b2b2b, #101010);
   color: #f1f1f1;
   margin-bottom: 60px;
 }
@@ -10,6 +10,7 @@ header {
   background-color: #000000;
   padding: 20px;
   text-align: center;
+  margin: 0;
 }
 
 header h1 {
@@ -64,8 +65,8 @@ footer {
   margin-bottom: 20px;
   margin-top: 10px;
   background-color: #333;
-  border-radius: 25px;
-  background-image: linear-gradient(rgb(61, 1, 1), black);
+  border-radius: 2rem;
+  border-top: 4px solid #d62f09;
 }
 
 .defensores {
@@ -75,15 +76,15 @@ footer {
   margin-top: 10px;
   margin-bottom: 20px;
   background-color: #333;
-  border-radius: 25px;
-  background-image: linear-gradient(rgb(1, 1, 51), black);
+  border-radius: 2rem;
+  border-top: 4px solid #0e9fcf;
 }
 
 .atacantes h2 {
   text-align: center;
   border-bottom: 2px solid #b8b2b2;
   padding-bottom: 10px;
-  color: #e49b0f;
+  color: #d62f09;
   filter: drop-shadow(5px 5px 5px #000000);
 }
 
@@ -91,7 +92,7 @@ footer {
   text-align: center;
   border-bottom: 2px solid #b8b2b2;
   padding-bottom: 10px;
-  color: #e49b0f;
+  color: #0e9fcf;
   filter: drop-shadow(5px 5px 5px #000000);
 }
 
@@ -106,4 +107,9 @@ footer {
   width: 55px;
   height: 50px;
   border-radius: 50%;
+}
+
+.operador h3 {
+  color: #e49b0f;
+  font-size: 1rem;
 }

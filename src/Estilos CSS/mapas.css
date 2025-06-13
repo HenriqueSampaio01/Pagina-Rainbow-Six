@@ -74,6 +74,12 @@ footer {
   margin-bottom: 10px;
 }
 
+.mapa h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #e49b0f;
+}
+
 footer {
   position: fixed;
   bottom: 0;

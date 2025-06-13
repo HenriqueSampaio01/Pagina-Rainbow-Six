@@ -58,7 +58,7 @@ footer {
   margin-bottom: 20px;
   background-color: #222;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 1rem;
   letter-spacing: 0.4px;
   border-left: 4px solid #0f96e4;
   filter: drop-shadow(5px 5px 5px #000000);
@@ -75,7 +75,7 @@ footer {
 .novidades {
   background-color: #222;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 1rem;
   border-left: 4px solid #0f96e4;
 
   filter: drop-shadow(5px 5px 5px #000000);
@@ -95,15 +95,15 @@ footer {
 }
 
 .novidades li {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .certificacoes {
   background-color: #222;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 1rem;
   color: #e49b0f;
-  margin-bottom: 20px;
+  margin-bottom: 1.4rem;
   border-left: 4px solid #0f96e4;
   filter: drop-shadow(5px 5px 5px #000000);
 }
@@ -129,6 +129,6 @@ footer {
 
 .meuscertificados img {
   width: 100%;
-  border-radius: 6px;
-  margin-top: 10px;
+  border-radius: 1rem;
+  margin-top: .825rem;
 }
