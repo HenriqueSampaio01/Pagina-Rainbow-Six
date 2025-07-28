@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica;
   margin: 0;
   background-color: #1c1c1c;
   color: #f1f1f1;
@@ -21,7 +21,6 @@ header h1 {
 nav ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -35,6 +34,7 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
+  transition: 0.5s;
 }
 
 footer {
@@ -66,6 +66,7 @@ footer {
 
 .introducao:hover {
   transform: scale(1.05);
+  transition: 0.5s;
 }
 
 .introducao h2 {
@@ -83,6 +84,7 @@ footer {
 
 .novidades:hover {
   transform:scale(1.05);
+  transition: 0.5s;
 }
 
 .novidades h2 {
@@ -110,6 +112,7 @@ footer {
 
 .certificacoes:hover {
   transform: scale(1.05);
+  transition: 0.5s;
 }
 
 .certificados {
