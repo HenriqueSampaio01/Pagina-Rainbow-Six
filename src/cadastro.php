@@ -79,7 +79,7 @@ try {
 
     echo json_encode([
         'sucesso' => true,
-        'mensagem' => 'Cadastro realizado com sucesso! Redirecionando para login...'
+        'mensagem' => 'Cadastro realizado com sucesso!'
     ]);
 
 } catch (PDOException $e) {
