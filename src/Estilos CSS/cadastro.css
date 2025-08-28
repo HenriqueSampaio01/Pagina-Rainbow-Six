@@ -109,3 +109,38 @@ h2 {
     padding: 10px;
     margin-bottom: 15px;
 }
+
+/* Estilos para mensagens */
+.mensagem.erro {
+  background-color: #ff4444;
+  color: white;
+  border: 1px solid #cc0000;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.mensagem.sucesso {
+  background-color: #44ff44;
+  color: black;
+  border: 1px solid #00cc00;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Estilos para botões de redirecionamento */
+.btn-login {
+  display: inline-block;
+  background-color: #e49b0f;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #c4811e;
+  transform: translateY(-2px);
+}
