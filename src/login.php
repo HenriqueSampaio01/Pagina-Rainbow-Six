@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "db";
 $nome = "root";
 $senha = "root";
@@ -9,26 +11,42 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-       $nome = $_POST['nome'] ?? '';
-       $senha = $_POST['senha'] ?? '';
+        $nome = trim($_POST['nome'] ?? '');
+        $senha = $_POST['senha'] ?? '';
 
-    if (empty($nome) || empty($senha)) {
-        header("Location: login.html?erro=campos_vazios");
-        exit;
+        $erros = [];
+
+        // Validação dos campos
+        if (empty($nome)) {
+            $erros[] = 'Nome é obrigatório';
         }
 
-    $sql = "SELECT * FROM cadastro WHERE nome = :nome";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([':nome' => $nome]);
+        if (empty($senha)) {
+            $erros[] = 'Senha é obrigatória';
+        }
 
-    $nome = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Se houver erros, redireciona
+        if (!empty($erros)) {
+            $erroString = urlencode(implode('|', $erros));
+            header("Location: login.html?erro=$erroString");
+            exit;
+        }
 
-    if ($nome && password_verify($senha, $nome['senha'])) {
-            $_SESSION['nome'] = $nome['nome'];
+        // Busca usuário
+        $sql = "SELECT * FROM cadastro WHERE nome = :nome";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':nome' => $nome]);
+
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario && password_verify($senha, $usuario['senha'])) {
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
             header("Location: area-restrita.html");
             exit;
         } else {
-            header("Location: login.html?erro=invalido");
+            header("Location: login.html?erro=credenciais_invalidas");
             exit;
         }
     } else {

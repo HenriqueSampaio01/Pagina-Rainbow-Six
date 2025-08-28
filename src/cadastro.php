@@ -14,11 +14,33 @@ try {
     $email = $_POST['email'] ?? '';
     $senha =  $_POST['senha'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
-    $genero = isset($_POST['genero']) && in_array($_POST['genero'], ['0', '1']) ? intval($_POST['genero']) : null;
+    $erros = [];
 
-    if (empty($nome) || empty($email) || empty($senha) || empty($telefone)) {
-        header("Location: cadastro.html?erro=campos_vazios");
-        exit;
+    if (empty($nome)) {
+        $erros[] = 'Nome é obrigatório';
+    } elseif (strlen($nome) < 3) {
+        $erros[] = 'Nome deve ter pelo menos 3 caracteres';
+    }
+
+    // Validação do email
+    if (empty($email)) {
+        $erros[] = 'E-mail é obrigatório';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erros[] = 'E-mail inválido';
+    }
+
+    // Validação da senha
+    if (empty($senha)) {
+        $erros[] = 'Senha é obrigatória';
+    } elseif (strlen($senha) < 6) {
+        $erros[] = 'Senha deve ter pelo menos 6 caracteres';
+    }
+
+    // Validação do telefone
+    if (empty($telefone)) {
+        $erros[] = 'Telefone é obrigatório';
+    } elseif (!preg_match('/^[0-9]{8,15}$/', $telefone)) {
+        $erros[] = 'Telefone inválido (8-15 dígitos)';
     }
 
     $check = $pdo->prepare("SELECT COUNT(*) FROM cadastro WHERE email = :email");
@@ -31,15 +53,14 @@ try {
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
     //Preparando para inserção
-    $sql = "INSERT INTO cadastro (nome, email, senha, telefone, genero)
-            VALUES (:nome, :email, :senha, :telefone, :genero)";
+    $sql = "INSERT INTO cadastro (nome, email, senha, telefone)
+            VALUES (:nome, :email, :senha, :telefone,)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         ':nome' => $nome,
         ':email' => $email,
         ':senha' => $senhaHash,
         ':telefone' => $telefone,
-        ':genero' => $genero,
     ]);
 
     header("Location: login.html?sucesso=1");
