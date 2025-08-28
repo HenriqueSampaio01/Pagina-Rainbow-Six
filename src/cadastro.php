@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 $host = "db";
 $nome = "root";
 $senha = "root";
@@ -43,10 +45,22 @@ try {
         $erros[] = 'Telefone inválido (8-15 dígitos)';
     }
 
+    // Verificar se há erros de validação
+    if (!empty($erros)) {
+        echo json_encode([
+            'sucesso' => false,
+            'erros' => $erros
+        ]);
+        exit;
+    }
+
     $check = $pdo->prepare("SELECT COUNT(*) FROM cadastro WHERE email = :email");
     $check->execute([':email' => $email]);
     if ($check->fetchColumn() > 0) {
-        header("Location: cadastro.html?erro=email_duplicado");
+        echo json_encode([
+            'sucesso' => false,
+            'erros' => ['E-mail já cadastrado']
+        ]);
         exit;
     }
 
@@ -54,7 +68,7 @@ try {
 
     //Preparando para inserção
     $sql = "INSERT INTO cadastro (nome, email, senha, telefone)
-            VALUES (:nome, :email, :senha, :telefone,)";
+            VALUES (:nome, :email, :senha, :telefone)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
         ':nome' => $nome,
@@ -63,10 +77,15 @@ try {
         ':telefone' => $telefone,
     ]);
 
-    header("Location: login.html?sucesso=1");
-    exit;
+    echo json_encode([
+        'sucesso' => true,
+        'mensagem' => 'Cadastro realizado com sucesso!'
+    ]);
+
 } catch (PDOException $e) {
-    header("Location: cadastro.html?erro=erro_banco");
-    exit;
+    echo json_encode([
+        'sucesso' => false,
+        'erros' => ['Erro no banco de dados. Tente novamente.']
+    ]);
 }
 ?>

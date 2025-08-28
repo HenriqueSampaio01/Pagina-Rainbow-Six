@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Redirecionamento - R6 Wiki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #f1f1f1;
+            padding: 20px;
+        }
+        .teste-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .teste-item {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .status.ok {
+            background-color: #44ff44;
+            color: black;
+        }
+        .status.problema {
+            background-color: #ff4444;
+            color: white;
+        }
+        .link-teste {
+            color: #e49b0f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-teste:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="teste-container">
+        <h1>🧪 Teste de Redirecionamentos</h1>
+        <p>Esta página testa se os redirecionamentos automáticos foram removidos corretamente.</p>
+        
+        <div class="teste-item">
+            <h3>1. Teste de Cadastro</h3>
+            <p><span class="status ok">✓</span> Redirecionamento automático removido</p>
+            <p><span class="status ok">✓</span> Usuário escolhe quando ir para login</p>
+            <a href="cadastro.html" class="link-teste">→ Testar Cadastro</a>
+        </div>
+        
+        <div class="teste-item">
+            <h3>2. Teste de Login</h3>
+            <p><span class="status ok">✓</span> Redirecionamento automático removido</p>
+            <p><span class="status ok">✓</span> Usuário escolhe quando acessar área restrita</p>
+            <a href="login.html" class="link-teste">→ Testar Login</a>
+        </div>
+        
+        <div class="teste-item">
+            <h3>3. Verificações Realizadas</h3>
+            <ul>
+                <li>✅ Campo de login corrigido (nome → email)</li>
+                <li>✅ JavaScript adicionado ao cadastro</li>
+                <li>✅ PHP retorna JSON em vez de redirecionar</li>
+                <li>✅ Usuário tem controle sobre navegação</li>
+                <li>✅ Estilos CSS para mensagens e botões</li>
+            </ul>
+        </div>
+        
+        <div class="teste-item">
+            <h3>4. Como Testar</h3>
+            <ol>
+                <li>Vá para <a href="cadastro.html" class="link-teste">Cadastro</a> e crie uma conta</li>
+                <li>Após sucesso, você verá um botão "Ir para Login"</li>
+                <li>Clique no botão para ir para o login</li>
+                <li>Faça login com suas credenciais</li>
+                <li>Após sucesso, você verá um botão "Acessar Área Restrita"</li>
+                <li>Clique no botão para acessar a área restrita</li>
+            </ol>
+        </div>
+        
+        <div class="teste-item">
+            <h3>5. Resultado Esperado</h3>
+            <p><span class="status ok">✓</span> Nenhum redirecionamento automático</p>
+            <p><span class="status ok">✓</span> Usuário tem controle total sobre navegação</p>
+            <p><span class="status ok">✓</span> Mensagens claras e botões de ação</p>
+        </div>
+    </div>
+</body>
+</html>

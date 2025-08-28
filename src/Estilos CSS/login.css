@@ -108,3 +108,41 @@ footer {
   background-color: #c4811e;
   transition: 0.5s;
 }
+
+/* Estilos para mensagens */
+.mensagem {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.mensagem.erro {
+  background-color: #ff4444;
+  color: white;
+  border: 1px solid #cc0000;
+}
+
+.mensagem.sucesso {
+  background-color: #44ff44;
+  color: black;
+  border: 1px solid #00cc00;
+}
+
+/* Estilos para botões de redirecionamento */
+.btn-redirect {
+  display: inline-block;
+  background-color: #e49b0f;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-redirect:hover {
+  background-color: #c4811e;
+  transform: translateY(-2px);
+}
