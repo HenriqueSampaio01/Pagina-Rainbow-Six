@@ -19,30 +19,30 @@ try {
     $erros = [];
 
     if (empty($nome)) {
-        $erros[] = 'Nome é obrigatório';
+        $erros[] = 'Insira o seu nome';
     } elseif (strlen($nome) < 3) {
-        $erros[] = 'Nome deve ter pelo menos 3 caracteres';
+        $erros[] = 'Nome deve ter no mínimo 3 caracteres';
     }
 
     // Validação do email
     if (empty($email)) {
-        $erros[] = 'E-mail é obrigatório';
+        $erros[] = 'Digite o seu email';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $erros[] = 'E-mail inválido';
     }
 
     // Validação da senha
     if (empty($senha)) {
-        $erros[] = 'Senha é obrigatória';
+        $erros[] = 'Digite a sua senha';
     } elseif (strlen($senha) < 6) {
-        $erros[] = 'Senha deve ter pelo menos 6 caracteres';
+        $erros[] = 'A senha deve ter no mínimo 6 caracteres';
     }
 
     // Validação do telefone
     if (empty($telefone)) {
-        $erros[] = 'Telefone é obrigatório';
+        $erros[] = 'Insira seu número de telefone';
     } elseif (!preg_match('/^[0-9]{8,15}$/', $telefone)) {
-        $erros[] = 'Telefone inválido (8-15 dígitos)';
+        $erros[] = 'Telefone inválido, deve conter (8-15 dígitos)';
     }
 
     // Verificar se há erros de validação
